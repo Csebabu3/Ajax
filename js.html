@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d">
+
+    </div>
+    <button onclick="load()">click</button>
+    <script>
+        function load(){
+            var v1 = new XMLHttpRequest();
+        v1.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                var v2 = v1.responseText;
+                document.getElementById("d").innerHTML=v2;
+            }
+        };
+        v1.open("GET","call.html",true);
+        v1.send();
+        }
+       
+    </script>
+</body>
+</html>
